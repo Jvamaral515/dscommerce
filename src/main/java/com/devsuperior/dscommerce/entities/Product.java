@@ -18,7 +18,7 @@ public class Product {
     @Column(columnDefinition = "TEXT")
     private String description;
     private Double price;
-    private String imageUri;
+    private String imgUrl;
 
     @ManyToMany
     @JoinTable(name = "tb_product_category",
@@ -32,12 +32,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, String name, String description, Double price, String imageUri) {
+    public Product(Long id, String name, String description, Double price, String imgUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.imageUri = imageUri;
+        this.imgUrl = imgUrl;
     }
 
     public Long getId() {
@@ -72,12 +72,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getImageUri() {
-        return imageUri;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setImageUri(String imageUri) {
-        this.imageUri = imageUri;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public Set<Category> getCategories() {

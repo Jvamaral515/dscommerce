@@ -12,7 +12,7 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query(nativeQuery = true, value = """
-           SELECT
+           SELECT u.email, u.password, r.id, r.authority
              FROM tb_user u
              JOIN tb_user_role ur
                ON u.id = ur.user_id

@@ -2,6 +2,7 @@ package com.devsuperior.dscommerce.dto;
 
 import com.devsuperior.dscommerce.entities.Order;
 import com.devsuperior.dscommerce.entities.OrderStatus;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.time.Instant;
 import java.util.HashSet;
@@ -14,6 +15,8 @@ public class OrderDTO {
     private OrderStatus status;
     private ClientDTO client;
     private PaymentDTO payment;
+
+    @NotEmpty(message = "O pedido deve conter pelo menos um item")
     private Set<OrderItemDTO> items = new HashSet<>();
 
     public OrderDTO() {
